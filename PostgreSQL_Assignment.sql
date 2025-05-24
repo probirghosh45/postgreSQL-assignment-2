@@ -27,6 +27,7 @@ CREATE TABLE sightings(
 
 );
 
+
 INSERT INTO rangers(name,region) VALUES
 ('Alice Green', 'Northern Hills'),
 ('Bob White', 'River Delta'),
