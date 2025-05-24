@@ -51,3 +51,31 @@ INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VA
 
 
 SELECT * FROM sightings;
+
+-- Task 1 : Register a new ranger with provided data with name = 'Derek Fox' and region = 'Coastal Plains'
+INSERT INTO rangers (name, region) VALUES
+('Derek Fox','Coastal Plains');
+ 
+ SELECT * FROM rangers;
+
+-- Task 2 : Count unique species ever sighted.
+SELECT count (*) AS unique_species_count FROM species;
+
+-- Task 3 : Find all sightings where the location includes "Pass".
+
+SELECT * FROM sightings where location ILIKE '%Pass%';
+
+-- Task 4 : List each ranger's name and their total number of sightings.
+SELECT r.name ,count(s.sighting_id) AS total_sightings
+FROM rangers r
+JOIN sightings s ON r.ranger_id = s.ranger_id
+GROUP BY r.name;
+
+
+-- Task 5 : List species that have never been sighted.
+
+SELECT s.common_name
+FROM species s
+LEFT JOIN sightings si ON s.species_id = si.species_id
+WHERE si.sighting_id IS NULL;   
+
