@@ -58,8 +58,10 @@ INSERT INTO rangers (name, region) VALUES
  
  SELECT * FROM rangers;
 
--- Task 2 : Count unique species ever sighted.
-SELECT count (*) AS unique_species_count FROM species;
+-- -- Task 2 : Count unique species ever sighted.
+SELECT count(DISTINCT species_id) AS unique_species_count FROM sightings;
+
+-- SELECT count (*) AS unique_species_count FROM species;
 
 -- Task 3 : Find all sightings where the location includes "Pass".
 
@@ -79,13 +81,19 @@ FROM species s
 LEFT JOIN sightings si ON s.species_id = si.species_id
 WHERE si.sighting_id IS NULL;   
 
--- Task 6 : 
+-- Task 6 : Show the most recent 2 sightings.
 SELECT s.common_name,si.sighting_time,r.name
 FROM sightings si
 JOIN species s ON si.species_id = s.species_id
 JOIN rangers r ON si.ranger_id = r.ranger_id
 ORDER BY si.sighting_time DESC
 LIMIT 2;
+
+-- Task 7 : Update all species discovered before year 1800 to have status 'Historic'.
+
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE discovery_date < '1800-01-01' 
 
 
 
