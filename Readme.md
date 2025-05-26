@@ -60,7 +60,7 @@ SELECT * FROM customers;
 
 ---
 
-### ❌ 4. ডাটা রিমুভ (Removing Data):
+### ❌ ডাটা রিমুভ (Removing Data):
 
 `DROP TABLE` কমান্ড ব্যবহার করে এই টেবিলটি রিমুভ করা হচ্ছে
 
