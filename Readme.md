@@ -39,7 +39,7 @@ CREATE TABLE customers (
 
 ### ✍️ 2. ডাটা ইনসার্ট (Inserting Data):
 
-ekane `INSERT INTO` কমান্ড ব্যবহার করে এই টেবিলে ডাটা ইনসার্ট করেছি -
+এখানে `INSERT INTO` কমান্ড ব্যবহার করে এই টেবিলে ডাটা ইনসার্ট করেছি -
 
 ```sql
 INSERT INTO customers (first_name, last_name, email)
